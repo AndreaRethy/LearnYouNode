@@ -1,3 +1,6 @@
-const hello = "HELLO WORLD";
+function sayHello(message) {
+    console.log(message);
+}
 
-console.log(hello);
+const hello = "HELLO WORLD";
+sayHello(hello);
