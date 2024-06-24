@@ -1,0 +1,12 @@
+{
+  "name": "learnyounode-js",
+  "version": "1.0.0",
+  "description": "To test each script:",
+  "main": "baby-steps.js",
+  "scripts": {
+    "test": "learnyounode verify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

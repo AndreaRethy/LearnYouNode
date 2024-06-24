@@ -20,4 +20,4 @@ jobs:
     - run: npm install
     - run: npm i learnyounode
     - name: Run tests
-      run: learnyounode verify my-first-io.js
+      run: test my-first-io.js
