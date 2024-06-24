@@ -12,6 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install dependencies
-      run: npm i learnyounode
+    - run: npm install
+    - run: npm i learnyounode
     - name: Run tests
       run: learnyounode verify my-first-io.js
