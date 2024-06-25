@@ -17,4 +17,4 @@ jobs:
       run: npm install
     - run: npm ci
     - name: Run tests
-      run: test my-first-async-io.js
+      run: test filtered-ls.js
