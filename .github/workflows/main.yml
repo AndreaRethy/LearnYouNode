@@ -14,7 +14,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v4
     - name: Install dependencies
-      run: npm install
+      run: npm install learnyounode
     - run: npm ci
     - run: learnyounode
     - name: Run tests
