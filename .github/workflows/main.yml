@@ -16,5 +16,11 @@ jobs:
     - name: Install dependencies
       run: npm install
     - run: npm ci
+    - run: learnyounode
     - name: Run tests
-      run: test filtered-ls.js
+      run: test hello-world.js
+    - run: test baby-steps.js
+    - run: test my-first-io.js
+    - run: test my-first-async-io.js
+    - run: test filtered-ls.js
+    - run: test make-it-modular.js
