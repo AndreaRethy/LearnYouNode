@@ -14,9 +14,8 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v4
     - name: Install dependencies
-      run: npm install learnyounode
+      run: npm install learnyounode --no-fund --disable-warning
     - run: npm ci
-    - run: learnyounode
     - name: Run tests
       run: test hello-world.js
     - run: test baby-steps.js
@@ -24,3 +23,4 @@ jobs:
     - run: test my-first-async-io.js
     - run: test filtered-ls.js
     - run: test make-it-modular.js
+    - run: test http-client.js
