@@ -24,3 +24,4 @@ jobs:
     - run: test filtered-ls.js
     - run: test make-it-modular.js
     - run: test http-client.js
+    - run: test http-collect.js
