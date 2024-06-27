@@ -8,6 +8,7 @@ for (let i = 2; i < process.argv.length; i++){
 }
 
 function getData(i) {
+    responses[i] = '';
     http.get(urls[i], (res) => {
         res.setEncoding('utf-8');
         res.on('data', (chunk) => { 
@@ -15,7 +16,7 @@ function getData(i) {
         });
         res.on('end', () => {
             count++;
-            if (count == 3) {
+            if (count == urls.length) {
                 responses.forEach(response => {
                     console.log(response)
                 })
