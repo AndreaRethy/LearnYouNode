@@ -1,12 +1,16 @@
 const fs = require('node:fs');
 const http = require('node:http');
 const portNumber = process.argv[2];
+const fileLocation = process.argv[3];
 
-//fs.createReadStream()
 
 const server = http.createServer((req, res) => {
     console.log('reqest received');
-    res.end('Hola mundo');
+    const reader = fs.createReadStream(fileLocation);
+
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+
+    reader.pipe(res);
 });
 
 server.listen(portNumber, () => {
