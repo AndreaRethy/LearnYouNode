@@ -26,3 +26,4 @@ jobs:
     - run: test http-client.js
     - run: test http-collect.js
     - run: test juggling-async.js
+    - run: test time-server.js
