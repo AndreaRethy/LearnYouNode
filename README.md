@@ -12,3 +12,11 @@ To test each script:
   ```
   learnyounode verify <program.js>
   ```
+
+This was added to package.json as "test", but does not seem to properly work on the remote server. Each script was tested locally with the learnyounode tests.
+
+```
+"scripts": {
+    "test": "learnyounode verify"
+  },
+```
