@@ -29,3 +29,4 @@ jobs:
     - run: test time-server.js
     - run: test http-file-server.js
     - run: test http-uppercaserer.js
+    - run: test http-json-api-server.js
