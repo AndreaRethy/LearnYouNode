@@ -1,10 +1,14 @@
 const http = require('node:http');
+const url = require('node:url');
 const portNumber = process.argv[2];
-// let time;
 
 const server = http.createServer((req, res) => {
-    if (req.url === `/api/parsetime?iso=`) {
+    const parsedURL = url.parse(req.url, true);
+
+    if (parsedURL.pathname === `/api/parsetime`) {
         res.writeHead(200, {'Content-Type': 'application/json'});
+
+        console.log(parsedURL.query.iso);
 
         const isoTime = {
             "hour": 14,
@@ -15,8 +19,10 @@ const server = http.createServer((req, res) => {
         res.write(JSON.stringify(isoTime));
         res.end();
 
-    } else if (req.url === `/api/unixtime?iso=`) {
+    } else if (parsedURL.pathname === `/api/unixtime`) {
         res.writeHead(200, {'Content-Type': 'application/json'});
+
+        console.log(parsedURL.query.iso);
 
         const unixTime = { 
             "unixtime": 1376136615474
