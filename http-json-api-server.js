@@ -8,15 +8,18 @@ const server = http.createServer((req, res) => {
     if (parsedURL.pathname === `/api/parsetime`) {
         res.writeHead(200, {'Content-Type': 'application/json'});
 
-        console.log(parsedURL.query.iso);
+        const date = new Date(parsedURL.query.iso);
+        const getHours = date.getHours();
+        const getMinutes = date.getMinutes();
+        const getSeconds = date.getSeconds();
 
-        const isoTime = {
-            "hour": 14,
-            "minute": 23,
-            "second": 15
+        const time = {
+            "hour": getHours,
+            "minute": getMinutes,
+            "second": getSeconds
         };
 
-        res.write(JSON.stringify(isoTime));
+        res.write(JSON.stringify(time));
         res.end();
 
     } else if (parsedURL.pathname === `/api/unixtime`) {
@@ -24,8 +27,10 @@ const server = http.createServer((req, res) => {
 
         console.log(parsedURL.query.iso);
 
+        const getUnixTime = Date.parse(parsedURL.query.iso);
+
         const unixTime = { 
-            "unixtime": 1376136615474
+            "unixtime": getUnixTime
         };
 
         res.write(JSON.stringify(unixTime));
